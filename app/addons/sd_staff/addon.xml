@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>sd_staff</id>
+    <version>1.0</version>
+    <priority>2800</priority>
+    <position>100</position>
+    <status>active</status>
+    <dependencies/>
+    <default_language>en</default_language>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>  
+    <queries>
+        <item>DROP TABLE IF EXISTS ?:sd_staff;</item>
+        <item>
+            CREATE TABLE `?:sd_staff` (
+                ADD firstname  VARCHAR(32) NOT NULL
+                ADD lastname  VARCHAR(32) NOT NULL
+                ADD position VARCHAR(32) NOT NULL
+                ADD status char(1) NOT NULL default 'A'
+                ADD creation_date TIMESTAMP int(11) unsigned NOT NULL default '0'
+        </item>
+        <item for="uninstall">DROP TABLE IF EXISTS `?:sd_staff`;</item>
+  </queries>
+</addon>
